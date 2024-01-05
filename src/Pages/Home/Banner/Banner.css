@@ -1,0 +1,31 @@
+
+
+.left-div {
+
+        background-color:#FFA500;
+
+  }
+.right-div {
+
+        background-color:#FFA500;
+
+  }
+
+@media(max-width:768px){
+   .left-div {
+    background-color : transparent;
+    
+   }
+   .left-div h2,p{
+    color:black
+   }
+}
+@media(max-width:576px){
+   .left-div {
+    background-color : transparent;
+   }
+   .left-div h2,p{
+    color:black
+   }
+}
+
