@@ -1,9 +1,11 @@
+import Banner from "./Pages/Home/Banner/Banner";
 import Navigation from "./Pages/Home/Navbar/Navigation";
 
 function App() {
   return (
-    <div style={{marginInline:"200px"}} className="mt-3 ">
+    <div  className="mt-3 ">
         <Navigation></Navigation>
+        <Banner></Banner>
     </div>
   );
 }
