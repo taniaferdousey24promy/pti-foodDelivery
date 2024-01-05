@@ -1,3 +1,4 @@
+import { FaArrowRight, FaSearchengin } from "react-icons/fa6";
 import { LuUser } from "react-icons/lu";
 
 const Navigation = () => {
@@ -30,6 +31,10 @@ const Navigation = () => {
                 className="d-flex  "
                 role="search"
               >
+                {/* <button style={{borderStyle:"none" , }} type="submit">
+              <FaSearchengin />
+
+            </button> */}
                 <input
                   className="form-control me-2 ms-0"
                   type="search"
@@ -37,6 +42,8 @@ const Navigation = () => {
                   aria-label="Search"
                 />
               </form>
+
+             
               {/* </li> */}
 
               <li

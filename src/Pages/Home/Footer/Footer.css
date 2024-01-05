@@ -1,0 +1,31 @@
+/* style={{width:"500px"}}
+style={{marginLeft:"188px"}} */
+
+@media(min-width:992px){
+    .centering-leftdiv{
+        margin-left: 188px ;
+    }
+    
+    .inputField-width{
+        width: 500px;
+    
+    }
+}
+
+@media(max-width:768px){
+    .centering-leftdiv{
+        margin-left: 150px ;
+    }
+    .inputField-width{
+        width: 300px;
+    }
+}
+@media(max-width:576px){
+    .centering-leftdiv{
+        margin-left: 80px ;
+    }
+    .inputField-width{
+        width: 200px;
+        margin-inline: auto;
+    }
+}
