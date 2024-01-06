@@ -16,6 +16,10 @@
         margin-top: 48px;
         
     }
+    .icon{
+        background-color: #FFE4B5;
+        color: #FF4500 
+    }
     .img-style{
         width: 70%;
         margin-left: 100px;
@@ -48,6 +52,10 @@
         order:-1;
         margin-bottom:30px
     }
+    .icon{
+        background-color:  #FF4500 ;
+        color: white
+    }
     .img-style{
         display: none;
     }
@@ -78,6 +86,10 @@
         order:-1;
         margin-bottom:30px
 
+    }
+    .icon{
+        background-color:  #FF4500 ;
+        color: white
     }
     .img-style{
         display: none;

@@ -15,6 +15,7 @@ const Footer = () => {
       style={{
         backgroundColor: "#FFA500",
         marginTop: "100px",
+        
       }}
       className=" "
     >
@@ -27,7 +28,7 @@ const Footer = () => {
             className="col-lg-7 col-sm-12 sol-md-12 "
           >
             {/* div for email input */}
-            <div className="input-group input-field-style  ">
+            <div style={{}} className="input-group input-field-style  ">
               <div className="">
                 <input
                   type="text"
@@ -63,6 +64,17 @@ const Footer = () => {
               {/* div for icons */}
               <div className="icon-style col-lg-6 col-md-12 col-sm-12  ">
                 <FaGoogle
+                  className="ms-auto  p-1 fs-2 rounded-circle icon"
+                />
+                <FaTwitter
+                  
+                  className="ms-3   p-1 fs-2 rounded-circle icon  "
+                />
+                <FaInstagram
+                  
+                  className=" ms-3  p-1 fs-2 rounded-circle  icon"
+                />
+                {/* <FaGoogle
                   style={{ backgroundColor: "#FFE4B5	", color: "#FF4500" }}
                   className="ms-auto  p-2 fs-2 rounded-circle"
                 />
@@ -73,7 +85,7 @@ const Footer = () => {
                 <FaInstagram
                   style={{ backgroundColor: "#FFE4B5	", color: "#FF4500" }}
                   className=" ms-3  p-1 fs-2 rounded-circle  "
-                />
+                /> */}
               </div>
             </div>
           </div>
