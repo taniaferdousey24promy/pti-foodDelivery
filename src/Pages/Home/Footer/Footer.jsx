@@ -1,70 +1,85 @@
 import React from "react";
-import footerImage from "../../../assets/footerImage.png";
-import { FaArrowRight, FaGoogle, FaInstagram, FaTwitch, FaTwitter } from "react-icons/fa6";
+import {
+  FaArrowRight,
+  FaGoogle,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa6";
 import "./Footer.css";
-import { LuUser } from "react-icons/lu";
+import { PiCopyrightLight } from "react-icons/pi";
+import footerImage from "../../../assets/footerImage.png";
 
 const Footer = () => {
   return (
     <div
-      style={{ backgroundColor: "#FFA500",marginTop:"100px" }}
-      className=" container-fluid text-center  text-white  "
+      style={{
+        backgroundColor: "#FFA500",
+        marginTop: "100px",
+      }}
+      className=" "
     >
-      <div className="row ">
-        <div className="col-sm-12  col-md-12 col-lg-6   ">
-          {/* email box */}
-          <div style={{marginTop:"80px"}} className="input-group  centering-leftdiv">
-            <div className="">
-              <input
-                type="text"
-                className="form-control inputField-width"
-                id="floatingInputGroup1"
-                placeholder="Enter Your Email Here"
-              />
+      {/* div cor container */}
+      <div className="container ">
+        <div className="row   container-style ">
+          {/* div for left side */}
+          <div
+            style={{ paddingTop: "50px" }}
+            className="col-lg-7 col-sm-12 sol-md-12 "
+          >
+            {/* div for email input */}
+            <div className="input-group input-field-style  ">
+              <div className="">
+                <input
+                  type="text"
+                  className="form-control inputField-width"
+                  id="floatingInputGroup1"
+                  placeholder="Enter Your Email Here"
+                />
+              </div>
+              <span
+                style={{ backgroundColor: "#FF4500" }}
+                className="input-group-text text-white "
+              >
+                Subscribe
+                <FaArrowRight className="ms-2 " />{" "}
+              </span>
             </div>
-            <span
-              style={{ backgroundColor: "#FF4500" }}
-              className="input-group-text text-white "
-            >
-              Subscribe
-              <FaArrowRight className="ms-2 " />{" "}
-            </span>
+
+            {/* div for logo and social icons */}
+
+            <div className="mt-5 text-black row">
+              {/* div for logo */}
+              <div className="col-lg-6 col-md-12 col-sm-12 logo-style">
+                <h1 className="fw-bolder">
+                  pti<span style={{ color: "#FF4500" }}>.</span>
+                </h1>
+                <p className=" ">
+                  Copyright
+                  <PiCopyrightLight />
+                  Tripp.All Right Reserved
+                </p>
+              </div>
+
+              {/* div for icons */}
+              <div className="icon-style col-lg-6 col-md-12 col-sm-12  ">
+                <FaGoogle
+                  style={{ backgroundColor: "#FFE4B5	", color: "#FF4500" }}
+                  className="ms-auto  p-2 fs-2 rounded-circle"
+                />
+                <FaTwitter
+                  style={{ backgroundColor: "#FFE4B5	", color: "#FF4500" }}
+                  className="ms-3   p-1 fs-2 rounded-circle  "
+                />
+                <FaInstagram
+                  style={{ backgroundColor: "#FFE4B5	", color: "#FF4500" }}
+                  className=" ms-3  p-1 fs-2 rounded-circle  "
+                />
+              </div>
+            </div>
           </div>
-
-          {/* social media */}
-
-          <div style={{marginTop:"120px"}} className="row centering-leftdiv  ">
-            <div className="col text-black text-start">
-              <h1 className="fw-bolder">
-                pti<span style={{ color: "#FF4500" }}>.</span>
-              </h1>
-              <p className="ms-2 mt-4 ">CopyrightcTripp.All Right Reserved</p>
-            </div>
-            <div style={{marginTop:"70px" }} className="col text-end">
-              <FaGoogle
-                style={{ backgroundColor: "#FFE4B5	",color:"#FF4500" }}
-                className="ms-auto  p-2 fs-2 rounded-circle"
-              />
-              <FaTwitter
-                style={{ backgroundColor: "#FFE4B5	",color:"#FF4500" }}
-                className="ms-3   p-1 fs-2 rounded-circle  "
-              />
-              <FaInstagram
-                style={{ backgroundColor: "#FFE4B5	",color:"#FF4500" }}
-                className=" ms-3  p-1 fs-2 rounded-circle  "
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="col-sm-12  col-md-12 col-lg-6 mb-5  ">
-          <div className="">
-            <img
-              style={{ width: "50%" }}
-              className="img-fluid "
-              src={footerImage}
-              alt=""
-            />
+          {/* div for right side */}
+          <div className="col-lg-5 col-sm-12 col-md-12 ">
+            <img className="img-fluid img-style " src={footerImage} alt="" />
           </div>
         </div>
       </div>
@@ -73,3 +88,4 @@ const Footer = () => {
 };
 
 export default Footer;
+// paddingLeft:"100px"

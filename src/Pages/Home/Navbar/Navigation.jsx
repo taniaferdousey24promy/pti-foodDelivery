@@ -3,7 +3,7 @@ import { LuUser } from "react-icons/lu";
 
 const Navigation = () => {
   return (
-    <div>
+    <div className="container">
       <nav
         className="navbar navbar-expand-lg bg-transparent
 "
