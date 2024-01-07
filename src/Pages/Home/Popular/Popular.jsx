@@ -1,6 +1,5 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../../../AppProvider/AppProvider";
-import { PiBracketsAngleLight } from "react-icons/pi";
 // delete later
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +9,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import "./styles.css";
+import ReactHookForm from "../../../Components/ReactHookForm";
+
+
+
 const Popular = () => {
   const allData = useContext(AppContext);
   console.log(allData);
@@ -20,32 +23,67 @@ const Popular = () => {
   const recommendedData = allData.slice(2, 8);
   console.log(recommendedData);
 
+
   // delete later
 
-  let urls = [];
-  allData.forEach((element) => {
-    urls.push(element.ImageUrl);
-  });
-  console.log(urls);
+  // let urls = [];
+  // allData.forEach((element) => {
+  //   urls.push(element.ImageUrl);
+  // });
+  // console.log(urls);
+  const [show, setShow] = useState(false);
+  const handleShowModal = () => setShow(true);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-  };
+
+
   return (
     <div style={{ marginTop: "100px", marginBottom: "200px" }}>
       {/* Popular section */}
-      
+
       <div style={{ marginTop: "100px" }}>
-        <div className="d-flex  me-3">
+        <div className="d-flex  me-3 ">
           <h3 className="me-auto ">Popular</h3>
-          <p style={{ color: "#FFA500" }} className="me-2 fw-semibold">
-            AddMore
-          </p>
-          <PiBracketsAngleLight className="mt-1 fw-bold" />
+
+          <button
+            onClick={handleShowModal}
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Launch demo modal
+          </button>
+          {show && (
+            <div
+              className="modal fade "
+              id="exampleModal"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className=" modal-title fs-5" id="exampleModalLabel">
+                      Add New Food Item
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    {/* na */}
+                    <ReactHookForm></ReactHookForm>
+
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div>
           <Swiper
@@ -59,7 +97,7 @@ const Popular = () => {
           >
             {popularData.map((data) => (
               <SwiperSlide className="" key={data} data={data}>
-                <div style={{ width: "300px", height: "300px" }}>
+                <div style={{ width: "300px", height: "200px" }}>
                   <img
                     className=" rounded img-fluid    "
                     src={data.ImageUrl}
@@ -76,11 +114,47 @@ const Popular = () => {
       <div style={{ marginTop: "100px" }}>
         <div className="d-flex  me-3">
           <h3 className="me-auto ">Recommended</h3>
-          <p style={{ color: "#FFA500" }} className="me-2 fw-semibold">
-            AddMore{" "}
-          </p>
-          <PiBracketsAngleLight className="mt-1 fw-bold" />
-        </div>{" "}
+
+          <button
+            onClick={handleShowModal}
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Launch demo modal
+          </button>
+          {show && (
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">
+                      Add New Food Item
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <ReactHookForm></ReactHookForm>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
         <div>
           <Swiper
             slidesPerView={5}
@@ -93,7 +167,7 @@ const Popular = () => {
           >
             {recommendedData.map((data) => (
               <SwiperSlide className="" key={data} data={data}>
-                <div style={{ width: "300px", height: "300px" }}>
+                <div style={{ width: "300px", height: "200px" }}>
                   <img
                     className=" rounded img-fluid    "
                     src={data.ImageUrl}
