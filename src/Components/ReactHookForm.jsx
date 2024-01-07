@@ -9,13 +9,14 @@ const ReactHookForm = () => {
     handleSubmit,
   } = useForm();
 
-  const [newData,setNewData] = useState([]);
+  const [newData, setNewData] = useState([]);
   const onSubmit = (data) => {
     //console.log(data)
-    setNewData((prevData) => [...prevData, data])
+    setNewData((prevData) => [...prevData, data]);
   };
 
-  console.log(newData)
+  
+  console.log(newData);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
@@ -118,50 +119,53 @@ const ReactHookForm = () => {
             </span>
           )}
         </div>
-        {/* 5. popular select field */}
+        {/* 5.PopularAndRecommendedselect field */}
         <div className="input-group flex-nowrap mb-2 mt-3">
           <span className="input-group-text w-50" id="addon-wrapping">
             {/* Food Name */}
             Is This Food Popular
           </span>
-          <select className="form-select " name="popular" {...register("popular" , { required: "Select one option" })}
-          aria-invalid={errors.firstName ? "true" : "false"}
+          <select
+            className="form-select "
+            name="popular"
+            {...register("popular", { required: "Select one option" })}
+            aria-invalid={errors.firstName ? "true" : "false"}
           >
             <option value="true">true</option>
             <option value="false">false</option>
           </select>
           <div>
-          {errors.popular?.type === "required" && (
-            <span className="  ms-2 text-danger" role="alert">
-              {errors.popular.message}
-            </span>
-          )}
-        </div>
-          
+            {errors.popular?.type === "required" && (
+              <span className="  ms-2 text-danger" role="alert">
+                {errors.popular.message}
+              </span>
+            )}
+          </div>
         </div>
         {/* 6. recommendation select field */}
-        
+
         <div className="input-group flex-nowrap mb-2 mt-3">
           <span className="input-group-text w-50" id="addon-wrapping">
             {/* Food Name */}
             Is This Food Recommended
           </span>
-          <select className="form-select " name="recommended" {...register("recommended" , { required: "Select one option" })}
-          aria-invalid={errors.recommended ? "true" : "false"}
+          <select
+            className="form-select "
+            name="recommended"
+            {...register("recommended", { required: "Select one option" })}
+            aria-invalid={errors.recommended ? "true" : "false"}
           >
             <option value="true">true</option>
             <option value="false">false</option>
           </select>
           <div>
-          {errors.recommended?.type === "required" && (
-            <span className="  ms-2 text-danger" role="alert">
-              {errors.recommended.message}
-            </span>
-          )}
+            {errors.recommended?.type === "required" && (
+              <span className="  ms-2 text-danger" role="alert">
+                {errors.recommended.message}
+              </span>
+            )}
+          </div>
         </div>
-          
-        </div>
-        
 
         {/* submission field */}
         <div className="">

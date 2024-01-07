@@ -10,19 +10,17 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import "./styles.css";
 import ReactHookForm from "../../../Components/ReactHookForm";
-
-
+import { PiBracketsAngleLight } from "react-icons/pi";
 
 const Popular = () => {
   const allData = useContext(AppContext);
   console.log(allData);
 
-  const popularData = allData.slice(1);
+  const popularData = allData.filter((data) => data.IsPopular === true);
   console.log(popularData);
 
-  const recommendedData = allData.slice(2, 8);
+  const recommendedData = allData.filter((data) => data.IsRecommended === true);
   console.log(recommendedData);
-
 
   // delete later
 
@@ -34,8 +32,6 @@ const Popular = () => {
   const [show, setShow] = useState(false);
   const handleShowModal = () => setShow(true);
 
-
-
   return (
     <div style={{ marginTop: "100px", marginBottom: "200px" }}>
       {/* Popular section */}
@@ -45,14 +41,17 @@ const Popular = () => {
           <h3 className="me-auto ">Popular</h3>
 
           <button
+          style={{ color: "#FFA500" }}
             onClick={handleShowModal}
             type="button"
-            className="btn btn-primary"
+            className="btn "
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
-            Launch demo modal
+            Add More <PiBracketsAngleLight className="text-dark mb-1 fw-bold" />
           </button>
+
+          
           {show && (
             <div
               className="modal fade "
@@ -77,9 +76,7 @@ const Popular = () => {
                   <div className="modal-body">
                     {/* na */}
                     <ReactHookForm></ReactHookForm>
-
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -116,13 +113,14 @@ const Popular = () => {
           <h3 className="me-auto ">Recommended</h3>
 
           <button
+          style={{ color: "#FFA500" }}
             onClick={handleShowModal}
             type="button"
-            className="btn btn-primary"
+            className="btn "
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
-            Launch demo modal
+            Add More <PiBracketsAngleLight className="text-dark mb-1 fw-bold" />
           </button>
           {show && (
             <div
@@ -147,9 +145,7 @@ const Popular = () => {
                   </div>
                   <div className="modal-body">
                     <ReactHookForm></ReactHookForm>
-                    
                   </div>
-                  
                 </div>
               </div>
             </div>

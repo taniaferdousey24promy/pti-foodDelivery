@@ -7,7 +7,7 @@ const AppProvider = ({children}) => {
 
     useEffect(() => {
       fetch(
-        "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
+        "food.json"
       )
         .then((res) => res.json())
         .then((data) => setData(data.Items));
